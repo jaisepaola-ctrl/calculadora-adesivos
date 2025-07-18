@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de Adesivos - Bruscópias</title>
+  <script defer src="script.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-blue-100 p-6">
+  <div class="container mx-auto max-w-5xl">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-bold text-gray-800">Calculadora de Adesivos</h1>
+      <p class="text-gray-600">Calcule quantos adesivos cabem por folha e gere os dados para lançamento no sistema.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+      <!-- Card 1: Dados do Adesivo -->
+      <div class="p-6 bg-white rounded shadow">
+        <h2 class="text-xl font-semibold mb-4">Dados do Adesivo</h2>
+        <form id="form-adesivo" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium">Formato</label>
+            <select id="formato" class="w-full p-2 border rounded">
+              <option value="retangular">Retangular</option>
+              <option value="circular">Circular</option>
+            </select>
+          </div>
+          <div class="flex gap-2">
+            <input id="largura" type="number" placeholder="Largura (mm)" class="w-1/2 p-2 border rounded" required>
+            <input id="altura" type="number" placeholder="Altura (mm)" class="w-1/2 p-2 border rounded" required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium">Quantidade de adesivos</label>
+            <input id="quantidade" type="number" class="w-full p-2 border rounded" required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium">Cor</label>
+            <select id="cor" class="w-full p-2 border rounded">
+              <option value="cor">Colorido</option>
+              <option value="pb">Preto e Branco</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium">Material</label>
+            <select id="material" class="w-full p-2 border rounded">
+              <option value="1003">A3 COR VINIL ADESIVO BRILHO TRANSPARENTE (R$16,00)</option>
+              <option value="1010">A4 P&B VINIL ADESIVO FOSCO BRANCO (R$8,70)</option>
+              <option value="1135">A3 COR BOPP BRILHO (R$12,40)</option>
+              <!-- Adicione mais opções conforme a lista -->
+            </select>
+          </div>
+          <div class="flex items-center gap-2">
+            <input type="checkbox" id="ajusteArquivo">
+            <label for="ajusteArquivo">Ajuste de arquivo (R$17,25)</label>
+          </div>
+          <div class="flex items-center gap-2">
+            <input type="checkbox" id="recorteEletronico">
+            <label for="recorteEletronico">Recorte eletrônico por folha (R$7,00)</label>
+          </div>
+          <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Calcular</button>
+        </form>
+      </div>
+
+      <!-- Card 2: Resultados -->
+      <div class="p-6 bg-white rounded shadow">
+        <h2 class="text-xl font-semibold mb-4">Resultados</h2>
+        <div id="resultados" class="text-gray-700 space-y-2">
+          <p>Preencha os dados para ver os resultados.</p>
+        </div>
+      </div>
+
+      <!-- Card 3: Resumo -->
+      <div class="p-6 bg-white rounded shadow">
+        <h2 class="text-xl font-semibold mb-4">Resumo do Pedido</h2>
+        <div id="resumo" class="text-gray-700 whitespace-pre-wrap"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
